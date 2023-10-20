@@ -1,0 +1,38 @@
+<?php
+// Create a connection
+$connect = mysqli_connect("localhost", "root", "");
+
+// Check connection
+if (!$connect) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// Create the database
+$databaseName = "traininddb";
+$query = "CREATE DATABASE IF NOT EXISTS $databaseName";
+
+if (mysqli_query($connect, $query)) {
+    echo "Database created successfully";
+} else {
+    die("Error creating database: " . mysqli_error($connect));
+}
+
+$databaseName2 = "picture";
+$query = "CREATE DATABASE IF NOT EXISTS $databaseName2";
+
+if (mysqli_query($connect, $query)) {
+    echo "Database created successfully";
+} else {
+    die("Error creating database: " . mysqli_error($connect));
+}
+
+
+$databaseName3 = "All_Users";
+$query = "CREATE DATABASE IF NOT EXISTS $databaseName3";
+
+if (mysqli_query($connect, $query)) {
+    echo "Database created successfully";
+} else {
+    die("Error creating database: " . mysqli_error($connect));
+}
+?>
